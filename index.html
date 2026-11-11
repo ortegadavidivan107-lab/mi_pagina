@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pasión Equina: caballos, tradición, garrocha y cultura vaquera.">
+<title>Pasión Equina</title>
+<link rel="icon" href="recursos/pasion-equina.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header id="encabezado">
+  <a class="marca" href="#inicio"><img src="recursos/pasion-equina.jpg" alt="Logo de Pasión Equina" width="56" height="56"><span>Pasión Equina</span></a>
+  <button id="btnMenu" class="btn-menu" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">&#9776;</button>
+  <nav id="menu" aria-label="Principal">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#razas">Razas</a></li>
+      <li><a href="#opinion">Tu opinión</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="inicio" class="hero">
+    <div class="hero-texto">
+      <h1>Donde late el corazón de nuestra tierra</h1>
+      <p>Un punto de encuentro para quienes llevamos en la sangre la elegancia, la fuerza y la valentía del caballo de garrocha, y las fiestas de pueblo que le dan vida.</p>
+      <div class="acciones">
+        <button class="btn btn-oro" data-ir="razas">Conocer las razas</button>
+        <button class="btn btn-borde" data-ir="opinion">Dejar mi opinión</button>
+      </div>
+    </div>
+    <img src="recursos/pasion-equina.jpg" alt="Caballo dorado con el texto Pasión Equina" width="420" height="420">
+  </section>
+
+  <section id="nosotros" class="bloque">
+    <h2>Nosotros</h2>
+    <div class="rejilla">
+      <article class="tarjeta">
+        <h3>¿Qué es Pasión Equina?</h3>
+        <p>Una página para quienes sentimos amor profundo por los caballos. Para nosotros son compañeros, amigos fieles y símbolo de libertad y fuerza.</p>
+      </article>
+      <article class="tarjeta">
+        <h3>Nuestra misión</h3>
+        <p>Compartir el conocimiento, el cuidado y el respeto hacia los caballos: cómo montarlos, cómo cuidarlos, su historia y las razas del mundo.</p>
+      </article>
+      <article class="tarjeta">
+        <h3>Qué encontrarás</h3>
+        <ul>
+          <li>Fotos y videos de caballos</li>
+          <li>Consejos de alimentación y salud equina</li>
+          <li>La cultura vaquera de nuestra región</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="razas" class="bloque">
+    <h2>Razas de caballos</h2>
+    <p>Filtra por la cualidad que más las distingue.</p>
+    <div class="filtros" role="group" aria-label="Filtrar razas">
+      <button class="filtro activo" data-filtro="todas">Todas</button>
+      <button class="filtro" data-filtro="resistencia">Resistencia</button>
+      <button class="filtro" data-filtro="elegancia">Elegancia</button>
+      <button class="filtro" data-filtro="velocidad">Velocidad</button>
+    </div>
+    <div class="rejilla" id="listaRazas">
+      <article class="tarjeta raza" data-tipo="resistencia">
+        <h3>Árabe</h3><p class="origen">Origen: Arabia</p>
+        <p>Famoso por su resistencia en largas distancias.</p>
+        <p class="detalle" hidden>Es una de las razas más antiguas. Cabeza fina, cola alta y mucha energía.</p>
+        <button class="btn-mas" aria-expanded="false">Ver más</button>
+      </article>
+      <article class="tarjeta raza" data-tipo="elegancia">
+        <h3>Andaluz</h3><p class="origen">Origen: España</p>
+        <p>Porte elegante y paso brillante.</p>
+        <p class="detalle" hidden>Muy usado en exhibición y doma clásica por su nobleza y cuello arqueado.</p>
+        <button class="btn-mas" aria-expanded="false">Ver más</button>
+      </article>
+      <article class="tarjeta raza" data-tipo="velocidad">
+        <h3>Cuarto de milla</h3><p class="origen">Origen: Estados Unidos</p>
+        <p>Imbatible en distancias cortas.</p>
+        <p class="detalle" hidden>Su nombre viene de las carreras de un cuarto de milla. Es fuerte y muy ágil.</p>
+        <button class="btn-mas" aria-expanded="false">Ver más</button>
+      </article>
+      <article class="tarjeta raza" data-tipo="resistencia">
+        <h3>Criollo</h3><p class="origen">Origen: Suramérica</p>
+        <p>Rústico, fuerte y muy adaptable al trabajo de campo.</p>
+        <p class="detalle" hidden>Es compañero del vaquero en la llanura y del trabajo ganadero.</p>
+        <button class="btn-mas" aria-expanded="false">Ver más</button>
+      </article>
+    </div>
+    <p id="sinRazas" class="aviso" hidden>No hay razas para este filtro.</p>
+  </section>
+
+  <section id="opinion" class="bloque">
+    <h2>Tu opinión sobre los caballos</h2>
+    <div class="dos-col">
+      <form id="formOpinion" novalidate>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" autocomplete="name">
+        <span class="error" id="e-nombre"></span>
+
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" autocomplete="email">
+        <span class="error" id="e-correo"></span>
+
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" min="1" max="120">
+        <span class="error" id="e-edad"></span>
+
+        <label for="raza">Raza favorita</label>
+        <select id="raza" name="raza">
+          <option value="">Selecciona una raza</option>
+          <option>Árabe</option><option>Andaluz</option><option>Cuarto de milla</option><option>Criollo</option><option>Otra</option>
+        </select>
+        <span class="error" id="e-raza"></span>
+
+        <fieldset>
+          <legend>¿Has montado a caballo?</legend>
+          <label class="en-linea"><input type="radio" name="monta" value="Sí"> Sí</label>
+          <label class="en-linea"><input type="radio" name="monta" value="No"> No</label>
+        </fieldset>
+        <span class="error" id="e-monta"></span>
+
+        <label for="comentario">Tu opinión <small id="contador">0/200</small></label>
+        <textarea id="comentario" name="comentario" rows="4" maxlength="200" placeholder="Cuéntanos qué sientes por los caballos..."></textarea>
+        <span class="error" id="e-comentario"></span>
+
+        <label class="en-linea"><input type="checkbox" id="acepto"> Acepto que mi opinión se muestre en esta página</label>
+        <span class="error" id="e-acepto"></span>
+
+        <div class="acciones">
+          <button type="submit" class="btn btn-oro">Enviar opinión</button>
+          <button type="reset" class="btn btn-borde">Limpiar</button>
+        </div>
+        <p id="respuesta" role="status" aria-live="polite"></p>
+      </form>
+
+      <aside>
+        <h3>Opiniones recientes</h3>
+        <ul id="listaOpiniones"></ul>
+        <button id="btnBorrar" class="btn btn-borde" type="button">Borrar opiniones</button>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Pasión Equina: caballos, tradición y vaquería.</p>
+  <p>&copy; <span id="anio">2026</span> Pasión Equina</p>
+</footer>
+<button id="btnArriba" class="arriba" aria-label="Volver arriba" hidden>&#8593;</button>
+<script src="script.js"></script>
+</body>
+</html>
